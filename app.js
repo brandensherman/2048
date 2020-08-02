@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < board; i++) {
       let square = document.createElement('div');
+      square.classList.add('square');
       square.innerHTML = 0;
       gridDisplay.appendChild(square);
       squares.push(square);
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Swipe right
+  // Move right
   function moveRight() {
     for (let i = 0; i < board; i++) {
       // Define rows - 0 4 8 12 - and get each square in that row to the right of it
@@ -71,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Swipe left
+  // Move left
   function moveLeft() {
     for (let i = 0; i < board; i++) {
-      // Define rows - 0 4 8 12 - and get each square in that row to the right of it
+      // Define rows - 0 4 8 12 - and get each square in that row to the left of it
       if (i % 4 === 0) {
         let totalOne = squares[i].innerHTML;
         let totalTwo = squares[i + 1].innerHTML;
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Swipe down
+  // Move down
   function moveDown() {
     for (let i = 0; i < width; i++) {
       let totalOne = squares[i].innerHTML;
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Swipe up
+  // Move up
   function moveUp() {
     for (let i = 0; i < width; i++) {
       let totalOne = squares[i].innerHTML;
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Combine rows
-  function combineRow() {
+  function combineRows() {
     for (let i = 0; i < 15; i++) {
       if (squares[i].innerHTML === squares[i + 1].innerHTML) {
         let combineTotal = parseInt(squares[i].innerHTML) * 2;
@@ -189,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Combine columns
-  function combineColumn() {
+  function combineColumns() {
     for (let i = 0; i < 12; i++) {
       if (squares[i].innerHTML === squares[i + width].innerHTML) {
         let combineTotal = parseInt(squares[i].innerHTML) * 2;
@@ -217,28 +218,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function keyRight() {
     moveRight();
-    combineRow();
+    combineRows();
     moveRight();
     generateNumber();
   }
 
   function keyLeft() {
     moveLeft();
-    combineRow();
+    combineRows();
     moveLeft();
     generateNumber();
   }
 
   function keyDown() {
     moveDown();
-    combineColumn();
+    combineColumns();
     moveDown();
     generateNumber();
   }
 
   function keyUp() {
     moveUp();
-    combineColumn();
+    combineColumns();
     moveUp();
     generateNumber();
   }

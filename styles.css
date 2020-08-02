@@ -33,19 +33,17 @@ body {
 .grid {
   display: flex;
   flex-wrap: wrap;
-
   width: 400px;
   height: 400px;
-  background-color: rgb(0, 119, 255);
 }
 
-.grid div {
+.square {
   width: 100px;
   height: 100px;
   background-color: #eee4da;
   font-size: 40px;
   color: #776e65;
-  border: 0.1rem solid #776e65;
+  border: 1px solid #776e65;
   text-align: center;
   display: flex;
   justify-content: center;
