@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridDisplay = document.querySelector('.grid');
   const scoreDisplay = document.getElementById('score');
   const resultDisplay = document.getElementById('result');
+  let highScoreDisplay = document.getElementById('high-score');
+
+  highScoreDisplay.innerText = localStorage.getItem('score');
 
   const width = 4;
   const board = width * width;
@@ -250,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkForWin() {
     for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerHTML == 2048) {
+        setHighScore(score);
         resultDisplay.innerHTML = 'You Win!';
         document.removeEventListener('keyup', control);
       }
@@ -265,9 +269,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (zeros == 0) {
+    if (zeros === 0) {
+      setHighScore(score);
       resultDisplay.innerHTML = 'You Lose!';
       document.removeEventListener('keyup', control);
     }
   }
 });
+
+function setHighScore(score) {
+  let highScore = localStorage.getItem('score');
+  if (!highScore || score > highScore) {
+    localStorage.setItem('score', score);
+  }
+}
