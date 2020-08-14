@@ -2,10 +2,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: #fcf8e8;
 }
 
 body {
   font-family: 'Recursive', sans-serif;
+  color: #5d576b;
 }
 
 .game-container {
@@ -15,35 +17,62 @@ body {
   padding: 2rem;
 }
 
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-game-btn {
+  cursor: pointer;
+  border: none;
+  border: 1.5px solid #5d576b;
+  color: #5d576b;
+  background-color: #fcf8e8;
+  font-family: 'Recursive', sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px 0;
+  width: 125px;
+  transition: all 0.3s;
+}
+
+.new-game-btn:hover {
+  color: #fcf8e8;
+  background-color: #5d576b;
+}
+
 .scores-container {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .score-container {
-  padding-left: 1rem;
   text-align: center;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
+  width: 402px;
+  height: 402px;
+  border: 0.5px solid #5d576b;
+  border-radius: 3px;
 }
 
 .square {
   width: 100px;
   height: 100px;
-  background-color: #eee4da;
+  background-color: #fcf8e8;
   font-size: 40px;
-  color: #776e65;
-  border: 1px solid #776e65;
+  color: #5d576b;
+  border: 1px solid #5d576b;
   text-align: center;
   display: flex;
   justify-content: center;

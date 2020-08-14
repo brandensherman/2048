@@ -2,14 +2,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridDisplay = document.querySelector('.grid');
   const scoreDisplay = document.getElementById('score');
   const resultDisplay = document.getElementById('result');
+  const newGameBtn = document.querySelector('.new-game-btn');
   let highScoreDisplay = document.getElementById('high-score');
 
-  highScoreDisplay.innerText = localStorage.getItem('score');
+  highScoreDisplay.innerText = localStorage.getItem('score') || 0;
 
   const width = 4;
   const board = width * width;
   let squares = [];
   let score = 0;
+
+  document.addEventListener('click', (newGameBtn) => {
+    resetBoard();
+  });
+
+  function resetBoard() {
+    squares.map((square) => {
+      square.innerHTML = 0;
+    });
+    generateNumber();
+    generateNumber();
+
+    scoreDisplay.innerText = 0;
+  }
 
   // Create a playing board of squares
   function createBoard() {
