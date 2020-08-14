@@ -36,6 +36,10 @@ body {
   transition: all 0.3s;
 }
 
+.new-game-btn:focus {
+  outline: none;
+}
+
 .new-game-btn:hover {
   color: #fcf8e8;
   background-color: #5d576b;
