@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let squares = [];
   let score = 0;
 
-  document.addEventListener('click', (newGameBtn) => {
+  newGameBtn.addEventListener('click', () => {
     resetBoard();
   });
 
