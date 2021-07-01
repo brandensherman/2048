@@ -1,13 +1,35 @@
+:root {
+  --hot-pink: #cc0076;
+  --light-pink: #f865ae;
+  --ice-blue: #e6feff;
+  --royal-blue: #1211cb;
+  --night-purple: #1a1631;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #fcf8e8;
+  background-color: var(--night-purple);
 }
 
 body {
   font-family: 'Recursive', sans-serif;
-  color: #5d576b;
+  color: var(--ice-blue);
+}
+
+.game-title {
+  font-size: 6.5rem;
+}
+
+.score-title {
+  font-size: 1.2rem;
+  color: var(--light-pink);
+}
+
+#score,
+#high-score {
+  color: var(--light-pink);
 }
 
 .game-container {
@@ -22,29 +44,7 @@ body {
   flex-direction: column;
 }
 
-.new-game-btn {
-  cursor: pointer;
-  border: 1.5px solid #5d576b;
-  color: #5d576b;
-  background-color: #fcf8e8;
-  font-family: 'Recursive', sans-serif;
-  font-size: 1rem;
-  border-radius: 5px;
-  padding: 5px 0;
-  width: 125px;
-  transition: all 0.3s;
-}
-
-.new-game-btn:focus {
-  outline: none;
-}
-
-.new-game-btn:hover {
-  color: #fcf8e8;
-  background-color: #5d576b;
-}
-
-.scores-container {
+.high-score-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
@@ -53,6 +53,7 @@ body {
 .header-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
@@ -60,22 +61,44 @@ body {
   text-align: center;
 }
 
+.new-game-btn {
+  cursor: pointer;
+  border: 2px solid var(--hot-pink);
+  color: var(--ice-blue);
+  background-color: var(--night-purple);
+  font-family: 'Recursive', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 10px 0;
+  width: 125px;
+  transition: all 0.4s;
+}
+
+.new-game-btn:focus {
+  outline: none;
+}
+
+.new-game-btn:hover {
+  color: var(--night-purple);
+  background-color: var(--hot-pink);
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
   width: 402px;
   height: 402px;
-  border: 0.5px solid #5d576b;
+  border: 0.5px solid var(--hot-pink);
   border-radius: 3px;
 }
 
 .square {
   width: 100px;
   height: 100px;
-  background-color: #fcf8e8;
+  background-color: var(--night-purple);
   font-size: 40px;
-  color: #5d576b;
-  border: 1px solid #5d576b;
+  color: var(--ice-blue);
+  border: 1px solid var(--hot-pink);
   text-align: center;
   display: flex;
   justify-content: center;
